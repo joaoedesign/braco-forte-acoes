@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Entre no grupo oficial da Braço Forte Ações e participe das ações com prêmios de respeito: ferramentas, kit churrasco e mais.">
+<meta property="og:title" content="Braço Forte Ações">
+<meta property="og:description" content="Ações com prêmios de respeito para quem é da lida.">
+<meta property="og:image" content="../img/capa-kit-trabalho.webp">
+<link rel="icon" href="../img/logo.webp">
+<title>Braço Forte Ações</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700&display=swap">
+<style>
+  :root{
+    --preto:#0a0908;
+    --fundo:#100d09;
+    --card:#17130e;
+    --card-2:#1f1a13;
+    --borda:rgba(255,180,0,.14);
+    --amarelo:#FFB400;
+    --laranja:#F7931E;
+    --amarelo-claro:#FFD447;
+    --cromo-1:#ffffff;
+    --cromo-2:#cfcfcf;
+    --cromo-3:#7d7d7d;
+    --texto:#f4efe6;
+    --texto-2:#b8b0a3;
+    --verde:#25D366;
+    --display:"Barlow","Helvetica Neue",Arial,sans-serif;
+    --corpo:"Barlow","Helvetica Neue",Arial,sans-serif;
+    --cond:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+    --gutter:clamp(16px,4vw,32px);
+    --raio:22px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--preto);color:var(--texto);font-family:var(--corpo);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.08;letter-spacing:-.01em;margin:0;text-wrap:balance;text-transform:uppercase}
+  p{margin:0}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+
+  /* fundo de oficina: brilho quente que respira */
+  .ambiente{position:fixed;inset:0;z-index:-1;background:
+      radial-gradient(70% 45% at 50% 0%,rgba(247,147,30,.16),transparent 70%),
+      radial-gradient(40% 30% at 85% 30%,rgba(255,180,0,.12),transparent 70%),
+      radial-gradient(45% 35% at 10% 70%,rgba(247,147,30,.10),transparent 70%),
+      linear-gradient(180deg,#120e09 0%,var(--preto) 60%);
+    animation:respira 9s ease-in-out infinite alternate}
+  @keyframes respira{from{opacity:.85}to{opacity:1}}
+  .ambiente::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:3px 3px;opacity:.5}
+
+  .wrap{max-width:960px;margin-inline:auto;padding-inline:var(--gutter)}
+  .eyebrow{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.78rem;color:var(--amarelo)}
+
+  /* pílula com ponto pulsando */
+  .pill{display:inline-flex;align-items:center;gap:.6em;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:.5em 1.1em;font-family:var(--cond);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.74rem;color:var(--texto);backdrop-filter:blur(6px)}
+  .pill .dot{width:8px;height:8px;border-radius:50%;background:var(--verde);box-shadow:0 0 0 0 rgba(37,211,102,.7);animation:pulso 1.8s ease-out infinite}
+  .pill .dot--amarelo{background:var(--amarelo);box-shadow:0 0 0 0 rgba(255,180,0,.7)}
+  @keyframes pulso{0%{box-shadow:0 0 0 0 rgba(37,211,102,.7)}70%{box-shadow:0 0 0 9px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  .pill .dot--amarelo{animation-name:pulso-amarelo}
+  @keyframes pulso-amarelo{0%{box-shadow:0 0 0 0 rgba(255,180,0,.7)}70%{box-shadow:0 0 0 9px rgba(255,180,0,0)}100%{box-shadow:0 0 0 0 rgba(255,180,0,0)}}
+
+  /* texto cromado e texto dourado */
+  .cromo{color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.5)}
+  .ouro{color:var(--amarelo);text-shadow:0 2px 0 rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.5)}
+
+  /* ===== BOTÃO ANIMADO ===== */
+  .btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:.55em;text-decoration:none;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:1.02rem;color:#1a1000;padding:1.05em 2.1em;border-radius:999px;border:0;
+    background:linear-gradient(110deg,var(--amarelo-claro),var(--amarelo) 35%,var(--laranja) 70%,var(--amarelo-claro));background-size:220% 100%;
+    box-shadow:0 10px 30px rgba(247,147,30,.35),0 0 0 0 rgba(255,180,0,.5),inset 0 1px 0 rgba(255,255,255,.55);
+    animation:onda 4s linear infinite,brilho 2.6s ease-in-out infinite;transition:transform .18s ease,box-shadow .18s ease}
+  @keyframes onda{to{background-position:220% 0}}
+  @keyframes brilho{0%,100%{box-shadow:0 10px 30px rgba(247,147,30,.35),0 0 0 0 rgba(255,180,0,.55),inset 0 1px 0 rgba(255,255,255,.55)}50%{box-shadow:0 14px 40px rgba(247,147,30,.55),0 0 0 10px rgba(255,180,0,0),inset 0 1px 0 rgba(255,255,255,.55)}}
+  .btn::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.75) 50%,transparent 70%);transform:translateX(-120%);animation:reflexo 3.2s ease-in-out infinite}
+  @keyframes reflexo{0%,55%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+  .btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 18px 44px rgba(247,147,30,.6),inset 0 1px 0 rgba(255,255,255,.6);animation-play-state:paused,paused}
+  .btn:active{transform:translateY(0) scale(.98)}
+  .btn:focus-visible{outline:3px solid var(--amarelo-claro);outline-offset:4px}
+  .btn svg{width:1.25em;height:1.25em;flex:none}
+  .btn .seta{transition:transform .18s ease}
+  .btn:hover .seta{transform:translateX(4px)}
+  .btn--verde{background:linear-gradient(110deg,#3ee07d,var(--verde) 35%,#1ca551 70%,#3ee07d);background-size:220% 100%;color:#06180c;box-shadow:0 10px 30px rgba(37,211,102,.35),inset 0 1px 0 rgba(255,255,255,.4);animation:onda 4s linear infinite,brilho-verde 2.6s ease-in-out infinite}
+  @keyframes brilho-verde{0%,100%{box-shadow:0 10px 30px rgba(37,211,102,.3),0 0 0 0 rgba(37,211,102,.5),inset 0 1px 0 rgba(255,255,255,.4)}50%{box-shadow:0 14px 40px rgba(37,211,102,.5),0 0 0 10px rgba(37,211,102,0),inset 0 1px 0 rgba(255,255,255,.4)}}
+  .btn--verde:hover{box-shadow:0 18px 44px rgba(37,211,102,.55),inset 0 1px 0 rgba(255,255,255,.4)}
+  .btn--grande{font-size:1.18rem;padding:1.15em 2.6em}
+  .nota{font-family:var(--cond);text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;color:var(--texto-2)}
+
+  /* ===== 0. CABEÇALHO FIXO ===== */
+  .topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(12,10,8,.96);border-bottom:1px solid rgba(255,255,255,.06)}
+  .topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:10px}
+  .perfil{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+  .avatar{position:relative;width:50px;height:50px;flex:none}
+  .avatar .img{position:absolute;inset:0;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#2a1f0e,#0e0b07);border:2px solid rgba(255,180,0,.55);box-shadow:0 0 0 2px rgba(0,0,0,.6),0 6px 16px rgba(0,0,0,.6)}
+  .avatar .img img{width:100%;height:100%;object-fit:contain;padding:3px}
+  .avatar .online{position:absolute;right:-1px;bottom:-1px;width:14px;height:14px;border-radius:50%;background:var(--verde);border:2.5px solid var(--preto);box-shadow:0 0 8px var(--verde);z-index:1}
+  .perfil .nome{display:grid;gap:0;min-width:0}
+  .perfil .nome b{display:flex;align-items:center;gap:6px;font-family:var(--cond);font-weight:700;font-size:1.05rem;line-height:1.1;letter-spacing:.02em;color:var(--texto);white-space:nowrap}
+  .perfil .nome b svg{width:16px;height:16px;flex:none}
+  .perfil .nome small{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.62rem;line-height:1.2;color:var(--texto-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .redes-topo{display:flex;gap:8px;flex:none}
+  .redes-topo a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:var(--texto);transition:background .2s,transform .2s,border-color .2s}
+  .redes-topo a:hover{background:rgba(255,180,0,.2);border-color:rgba(255,180,0,.5);transform:translateY(-2px)}
+  .redes-topo svg{width:18px;height:18px}
+  @media (max-width:520px){
+    .redes-topo a:nth-child(n+3){display:none}
+    .perfil .nome small{max-width:46vw}
+  }
+
+  /* ===== 1. HERO: card grande da ação ===== */
+  .hero{padding-block:clamp(16px,3vw,28px) clamp(14px,2.5vw,22px)}
+  @keyframes entra{from{opacity:.3;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .acao--hero{animation:entra .7s ease-out both}
+  .hero .wrap>.btn--cheio{margin-bottom:14px}
+  .pill--vivo{background:#d9202c;border-color:#ff5560;color:#fff}
+  .pill--vivo .dot{background:#fff;animation-name:pulso-branco}
+  @keyframes pulso-branco{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}70%{box-shadow:0 0 0 8px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+  .acao .sobre-foto{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 clamp(18px,3vw,30px) 4px;display:grid;gap:10px;max-width:640px}
+  .acao .sobre-foto .tag{display:inline-block;justify-self:start;background:var(--amarelo);color:#1a1000;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.68rem;padding:.35em .8em;border-radius:6px}
+  .acao .sobre-foto h1{font-size:clamp(1.8rem,4.4vw,3.1rem);line-height:1.05}
+  .acao.acao--hero .foto::after{background:linear-gradient(180deg,transparent 48%,rgba(23,19,14,.45) 64%,rgba(23,19,14,.88) 80%,rgba(23,19,14,.98) 92%,var(--card) 100%)}
+  .acao.acao--hero .corpo{border-top:0;padding-top:0;grid-template-columns:1fr;gap:18px}
+  .acao.acao--hero .corpo .lead{color:var(--texto-2);font-size:.95rem;line-height:1.2;max-width:none}
+  .acao-info{display:grid;gap:14px;justify-items:start;padding:16px 18px;border-radius:14px;background:rgba(255,180,0,.06);border:1px solid rgba(255,180,0,.2)}
+  .btn--cheio{width:100%;justify-self:stretch}
+  .premios-lista{list-style:none;margin:0;padding:0;display:grid;gap:6px;width:100%}
+  .premios-lista li{display:flex;gap:10px;align-items:baseline;font-size:.95rem;color:var(--texto-2);line-height:1.3}
+  .premios-lista li b{flex:none;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;color:#1a1000;background:var(--amarelo);border-radius:6px;padding:.25em .55em}
+  .acao-nome{font-size:clamp(1.35rem,3vw,2rem);line-height:1.15;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.5)}
+  .kit-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .kit-grid li{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.05);border-radius:12px;padding:10px 12px}
+  .kit-ico{width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.22);color:var(--amarelo)}
+  .kit-ico svg{width:16px;height:16px}
+  .kit-txt{display:grid;gap:1px;min-width:0}
+  .kit-txt b{font-family:var(--cond);font-weight:600;font-size:.95rem;letter-spacing:.02em;color:var(--texto);line-height:1.2}
+  .kit-txt small{font-size:.76rem;color:var(--texto-2);line-height:1.3}
+  .acao.acao--hero .corpo .btn-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .acao.acao--hero .corpo .btn-col .btn{width:100%;padding-inline:1.2em}
+  .acao.acao--hero .corpo .btn-col .nota{color:var(--amarelo)}
+  @media (max-width:860px){.kit-grid{grid-template-columns:1fr}}
+  @media (max-width:720px){.acao.acao--hero .corpo .btn-col{grid-template-columns:1fr}}
+  @media (max-width:720px){
+    .acao.acao--hero .foto{aspect-ratio:auto;overflow:visible;background:var(--card)}
+    .acao.acao--hero .foto img{height:auto;aspect-ratio:1536/1024}
+    .acao .sobre-foto{position:relative;z-index:2;margin-top:-34%;padding:56px clamp(18px,3vw,30px) 4px;max-width:none;background:none}
+    .acao .sobre-foto h1{font-size:1.75rem}
+    .acao.acao--hero .foto::after{top:0;left:0;right:0;bottom:auto;height:auto;aspect-ratio:1536/1024;background:linear-gradient(180deg,transparent 40%,rgba(23,19,14,.6) 68%,rgba(23,19,14,.96) 90%,var(--card) 100%)}
+    .acao.acao--hero .corpo .btn-col{justify-items:start;text-align:left}
+  }
+
+  /* letreiro rolante */
+  .letreiro{overflow:hidden;border-block:1px solid var(--borda);background:linear-gradient(90deg,rgba(255,180,0,.06),rgba(247,147,30,.12),rgba(255,180,0,.06));padding-block:12px;margin-block:12px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+  .letreiro .trilho{display:flex;gap:0;width:max-content;animation:rola 28s linear infinite}
+  .letreiro span{display:inline-flex;align-items:center;gap:18px;padding-inline:18px;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:.8rem;color:var(--amarelo);white-space:nowrap}
+  .letreiro span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--laranja)}
+  @keyframes rola{to{transform:translateX(-50%)}}
+
+  /* ===== 2. AÇÃO EM DESTAQUE ===== */
+  .secao{padding-block:clamp(22px,3.2vw,36px)}
+  .secao .cab{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .secao .cab::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--laranja);box-shadow:0 0 12px var(--laranja)}
+  .secao .cab h2{font-family:var(--cond);font-weight:700;font-size:.9rem;letter-spacing:.22em;color:var(--texto)}
+  .acao{position:relative;border-radius:var(--raio);overflow:hidden;background:var(--card);border:1px solid var(--borda);box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(247,147,30,.08);transition:transform .25s ease,box-shadow .25s ease}
+  .acao:hover{transform:translateY(-4px);box-shadow:0 40px 90px rgba(0,0,0,.65),0 0 80px rgba(247,147,30,.16)}
+  .acao .foto{position:relative;aspect-ratio:1536/1024;max-width:100%;overflow:hidden;background:#000}
+  .acao .foto img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .6s ease}
+  .acao:hover .foto img{transform:scale(1.03)}
+  .acao .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 80%,rgba(23,19,14,.9))}
+  .acao .selos{position:absolute;top:16px;left:16px;right:16px;display:flex;justify-content:space-between;gap:10px;z-index:2}
+  .acao .titulo{grid-column:1/-1;display:grid;gap:10px}
+  .acao .titulo .tag{display:inline-block;justify-self:start;background:var(--amarelo);color:#1a1000;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;padding:.35em .8em;border-radius:6px}
+  .acao .titulo h3{font-size:clamp(1.9rem,5vw,3.2rem);line-height:.95}
+  .acao .corpo{padding:clamp(18px,3vw,30px);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}
+  .kit{list-style:none;margin:0;padding:0;display:grid;gap:8px;color:var(--texto-2);font-size:1rem}
+  .kit li{display:flex;gap:10px;align-items:center}
+  .kit li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--amarelo),var(--laranja));box-shadow:0 0 10px rgba(255,180,0,.6)}
+  .kit li strong{color:var(--texto);font-weight:600}
+  .acao .corpo .btn-col{display:grid;justify-items:center;gap:8px}
+
+  /* ===== 3. O QUE VOCÊ ENCONTRA ===== */
+  .secao.encontra{padding-top:clamp(40px,6vw,64px)}
+  .encontra h2.grande{font-size:clamp(1.9rem,5vw,3.2rem);margin-bottom:18px}
+  .lista{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+  .item{position:relative;background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--borda);border-radius:18px;padding:22px 20px;display:grid;gap:12px;align-content:start;overflow:hidden;transition:transform .2s ease,border-color .2s ease}
+  .item::before{content:"";position:absolute;inset:-40% auto auto -30%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(255,180,0,.18),transparent);pointer-events:none}
+  .item:hover{transform:translateY(-4px);border-color:rgba(255,180,0,.4)}
+  .item .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--amarelo),var(--laranja));color:#1a1000;box-shadow:0 8px 20px rgba(247,147,30,.35)}
+  .item .ico svg{width:24px;height:24px}
+  .item h3{font-family:var(--cond);font-weight:700;text-transform:none;letter-spacing:0;font-size:1.25rem;color:var(--texto)}
+  .item p{color:var(--texto-2);font-size:.95rem}
+
+  /* ===== 4. PRÊMIOS ===== */
+  .premios .intro{display:grid;gap:8px;margin-bottom:18px}
+  .premios h2.grande{font-size:clamp(1.8rem,4.2vw,2.8rem);text-wrap:pretty}
+  .premios .intro p{color:var(--texto-2);font-size:1.08rem;max-width:60ch}
+  .galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--borda);border-radius:18px;overflow:hidden;display:grid;transition:transform .2s ease,border-color .2s ease}
+  .card:hover{transform:translateY(-4px);border-color:rgba(255,180,0,.4)}
+  .card .thumb{aspect-ratio:4/3;max-width:100%;background:
+      radial-gradient(60% 60% at 50% 40%,rgba(255,180,0,.16),transparent 70%),linear-gradient(180deg,#221b12,#15110c);
+    display:grid;place-items:center;color:var(--texto-2);font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;position:relative}
+  .card .thumb svg{width:40px;height:40px;color:var(--amarelo);opacity:.8;margin-bottom:8px}
+  .card .thumb .em-breve{position:absolute;top:12px;left:12px}
+  .card .info{padding:18px;display:grid;gap:6px}
+  .card--foto .thumb{position:relative;overflow:hidden}
+  .card--foto .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 58%}
+  .card--foto .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(23,19,14,.75) 80%,var(--card))}
+  .card h3{font-family:var(--cond);font-weight:700;text-transform:none;letter-spacing:0;font-size:1.2rem}
+  .card p{color:var(--texto-2);font-size:.92rem}
+
+
+
+  /* ===== CONVIDE UM AMIGO ===== */
+  .convite{position:relative;overflow:hidden;border-radius:var(--raio);background:#fbf8f2;border:1px solid rgba(0,0,0,.1);box-shadow:0 20px 60px rgba(0,0,0,.35);color:#1a1000;padding:clamp(24px,4vw,40px);display:grid;gap:16px}
+  .convite::before{content:"";position:absolute;right:-15%;top:-40%;width:55%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(255,180,0,.22),transparent);pointer-events:none}
+  .convite .cab-convite{position:relative;display:grid;gap:8px;max-width:56ch;justify-items:start}
+  .convite h2{font-size:clamp(1.7rem,4.5vw,2.6rem)}
+  .convite h2 .cromo{color:#1a1000;text-shadow:none}
+  .convite h2 .ouro{color:#F2A900;text-shadow:none}
+  .convite .pill{background:rgba(0,0,0,.75);border-color:rgba(0,0,0,.6);color:#fff}
+  .convite p{color:#5a5248;font-size:1.02rem;font-weight:500}
+  .convite .linha{position:relative;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:stretch}
+  .convite .campo{display:flex;align-items:center;gap:10px;min-width:0;background:#1a1000;border:1px solid #1a1000;border-radius:999px;padding:0 18px;font-family:var(--cond);font-weight:600;font-size:.98rem;letter-spacing:.02em;color:var(--texto)}
+  .convite .campo svg{width:18px;height:18px;flex:none;color:var(--verde)}
+  .convite .campo span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .convite .btn{font-size:1rem;padding:.95em 1.5em}
+  .convite #copiar-link{background:#1a1000;color:var(--amarelo);animation:none;box-shadow:0 10px 24px rgba(0,0,0,.25)}
+  .convite #copiar-link::before{display:none}
+  .convite #copiar-link:hover{box-shadow:0 14px 30px rgba(0,0,0,.35)}
+  .convite #copiar-link.copiado{color:#fff}
+  .convite .acoes{position:relative;display:grid;gap:10px}
+  .convite .acoes .btn{width:100%;font-size:1.08rem;padding:1.05em 1.6em}
+  .convite .btn.copiado{background:linear-gradient(110deg,#3ee07d,var(--verde) 35%,#1ca551 70%,#3ee07d);background-size:220% 100%;color:#06180c}
+  @media (max-width:600px){
+    .convite .linha{grid-template-columns:1fr}
+    .convite .campo{padding-block:12px;justify-content:center}
+    .convite .btn{width:100%}
+  }
+
+  /* ===== 5. IDENTIDADE ===== */
+  .identidade{position:relative;overflow:hidden;border-radius:var(--raio);background:linear-gradient(180deg,#1b140b,#0f0c08);border:1px solid var(--borda);padding:clamp(24px,4vw,44px) clamp(20px,5vw,56px);display:grid;gap:18px;justify-items:center;text-align:center}
+  .identidade::before{content:"";position:absolute;left:50%;top:-20%;width:70%;aspect-ratio:1;border-radius:50%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(247,147,30,.22),transparent);pointer-events:none}
+  .identidade .marca-bloco{display:grid;gap:22px;justify-items:center;position:relative}
+  .identidade .logo-sobre{width:min(420px,85vw);height:auto;filter:drop-shadow(0 14px 30px rgba(0,0,0,.65))}
+  .identidade h2{font-size:clamp(2rem,5.5vw,3.8rem);line-height:1.1}
+  .identidade .texto{position:relative;display:grid;gap:14px;color:var(--texto-2);font-size:1.08rem;max-width:58ch}
+  .identidade .texto strong{color:var(--amarelo);font-weight:600}
+
+  /* ===== 6. RODAPÉ: letreiro de ganhadores + faixa final ===== */
+  .rodape{background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.05);padding-block:26px}
+  .rodape .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .rodape .selo-seguro{display:flex;align-items:center;gap:8px;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.66rem;color:var(--texto-2)}
+  .rodape .selo-seguro svg{width:12px;height:12px;color:var(--amarelo)}
+  .rodape .direitos{font-size:.72rem;color:#7a736a;margin-top:6px}
+  .redes{display:flex;gap:10px}
+  .redes a{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:var(--texto-2);transition:background .2s,transform .2s,color .2s}
+  .redes a:hover{background:rgba(255,180,0,.18);color:var(--texto);transform:translateY(-2px)}
+  .redes a.zap{color:var(--verde);border-color:rgba(37,211,102,.3);box-shadow:0 0 0 0 rgba(37,211,102,.5);animation:pulso 2s ease-out infinite}
+  .redes svg{width:20px;height:20px}
+  @media (max-width:720px){
+    .rodape .wrap{flex-direction:column-reverse;text-align:center}
+    .rodape .selo-seguro{justify-content:center}
+  }
+
+  @media (max-width:720px){
+    .acao .corpo{grid-template-columns:1fr}
+    .acao .corpo .btn-col{justify-items:start}
+    .identidade{grid-template-columns:1fr;gap:20px}
+    .btn--grande{font-size:1.05rem;padding:1.05em 2em}
+  }
+
+
+  /* notificação */
+  .toast{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;align-items:center;gap:12px;max-width:min(360px,calc(100vw - 32px));background:rgba(20,16,11,.96);border:1px solid rgba(255,180,0,.3);border-radius:16px;padding:12px 16px 12px 12px;box-shadow:0 16px 40px rgba(0,0,0,.6),0 0 30px rgba(247,147,30,.12);transform:translateY(24px);opacity:0;pointer-events:none;transition:transform .45s cubic-bezier(.2,.9,.3,1.2),opacity .35s ease}
+  .toast.on{transform:none;opacity:1;pointer-events:auto}
+  .toast .t-ico{width:44px;height:44px;border-radius:12px;flex:none;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 40%,#2a1f0e,#0e0b07);border:1.5px solid rgba(255,180,0,.55);box-shadow:0 0 0 1.5px rgba(0,0,0,.6)}
+  .toast .t-ico img{width:100%;height:100%;object-fit:contain;padding:3px}
+  .toast .t-txt{display:grid;gap:2px;min-width:0}
+  .toast .t-txt b{font-family:var(--cond);font-weight:700;font-size:.98rem;letter-spacing:.02em;color:var(--texto);line-height:1.2}
+  .toast .t-txt small{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.64rem;color:var(--amarelo);display:flex;align-items:center;gap:6px}
+  .toast .t-txt small::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--verde);box-shadow:0 0 8px var(--verde)}
+  .toast .t-x{flex:none;width:26px;height:26px;border-radius:50%;border:0;background:rgba(255,255,255,.06);color:var(--texto-2);font-size:14px;line-height:1;cursor:pointer;display:grid;place-items:center}
+  .toast .t-x:hover{background:rgba(255,255,255,.14);color:var(--texto)}
+  @media (prefers-reduced-motion:reduce){.toast{transition:none}}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+</style>
+<!-- Meta Pixel "Braço Forte - Site" (ID 1119447727293299) + evento JoinWhatsAppGroup -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1119447727293299');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1119447727293299&ev=PageView&noscript=1"/></noscript>
+<script>
+// Evento personalizado JoinWhatsAppGroup: dispara SOMENTE no clique real
+// em um CTA de entrar no grupo (links para chat.whatsapp.com).
+(function () {
+  var SEL = 'a[href*="chat.whatsapp.com/"]';
+  document.addEventListener('click', function (ev) {
+    if (ev.__bfJoinTracked) return;
+    var a = ev.target && ev.target.closest ? ev.target.closest(SEL) : null;
+    if (!a) return;
+    ev.__bfJoinTracked = true;
+    if (typeof fbq !== 'function') return;
+    var eventId = 'jwg-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+    fbq('trackCustom', 'JoinWhatsAppGroup', {
+      cta_text: (a.textContent || a.getAttribute('aria-label') || '').trim().slice(0, 60),
+      cta_class: a.className || '',
+      page: location.pathname
+    }, { eventID: eventId });
+  }, true);
+})();
+</script>
+</head>
+<body>
+
+<div class="ambiente" aria-hidden="true"></div>
+
+<!-- ===== 0. CABEÇALHO ===== -->
+<header class="topo" id="topo">
+  <div class="wrap">
+    <a class="perfil" href="https://www.instagram.com/acoesbracoforte/" target="_blank" rel="noopener" aria-label="Instagram da Braço Forte Ações">
+      <span class="avatar"><span class="img"><img src="../img/logo.webp" alt="" width="1774" height="887"></span><span class="online"></span></span>
+      <span class="nome">
+        <b>@acoesbracoforte <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#FFB400"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#1a1000" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></b>
+        <small>Ferramentas &amp; churrasco • Ações e prêmios</small>
+      </span>
+    </a>
+    <nav class="redes-topo" aria-label="Redes sociais">
+      <a href="https://chat.whatsapp.com/I9siORQjv3yGuf0AJzc8Ug" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01"/></svg></a>
+      <a href="https://www.instagram.com/acoesbracoforte/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== 1. PRIMEIRA DOBRA: card da ação ===== -->
+<section class="hero">
+  <div class="wrap">
+    <a class="btn btn--verde btn--grande btn--cheio" href="https://chat.whatsapp.com/I9siORQjv3yGuf0AJzc8Ug" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01"/></svg>
+      Entrar no grupo
+    </a>
+    <article class="acao acao--hero">
+      <div class="foto">
+        <img src="../img/capa-kit-trabalho.webp" alt="Kit Trabalho e Resenha: ferramentas Makita e kit churrasco" width="1536" height="1024">
+        <div class="sobre-foto">
+          <h1><span class="cromo">Entre agora no grupo</span> <span class="ouro">Braço Forte</span></h1>
+        </div>
+      </div>
+      <div class="corpo">
+        <p class="lead">Fique por dentro das nossas ações, acompanhe os lançamentos e não perca a oportunidade de participar dos próximos prêmios.</p>
+        <div class="acao-info">
+          <span class="pill"><span class="dot"></span>Ação ativa</span>
+          <h2 class="acao-nome"><span class="ouro">Kit Trabalho</span> e Resenha</h2>
+          <ul class="premios-lista">
+            <li><b>1º prêmio</b> Kit Makita com parafusadeira, chave de impacto, maleta e baterias + kit churrasco</li>
+            <li><b>2º prêmio</b> Bolsa Makita</li>
+            <li><b>Top comprador</b> Parafusadeira Makita com maleta e baterias</li>
+          </ul>
+          <a class="btn btn--grande btn--cheio" href="https://chat.whatsapp.com/I9siORQjv3yGuf0AJzc8Ug" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 6h-2.2A3 3 0 0 0 15 3.5c-1.3 0-2.4.8-3 1.9-.6-1.1-1.7-1.9-3-1.9A3 3 0 0 0 6.2 6H4a2 2 0 0 0-2 2v2h20V8a2 2 0 0 0-2-2ZM9 5.5c.8 0 1.5.7 1.5 1.5v1H9a1.2 1.2 0 0 1 0-2.5Zm6 0a1.2 1.2 0 0 1 0 2.5h-1.5V7c0-.8.7-1.5 1.5-1.5ZM3 12v7a2 2 0 0 0 2 2h6v-9H3Zm10 9h6a2 2 0 0 0 2-2v-7h-8v9Z"/></svg>
+            Participar agora
+            <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<div class="letreiro" aria-hidden="true">
+  <div class="trilho">
+    <span>Prêmios de respeito</span><span>Ações acessíveis</span><span>Kit Trabalho e Resenha</span><span>Tudo em primeira mão</span><span>Para quem é da lida</span>
+    <span>Prêmios de respeito</span><span>Ações acessíveis</span><span>Kit Trabalho e Resenha</span><span>Tudo em primeira mão</span><span>Para quem é da lida</span>
+  </div>
+</div>
+
+<!-- ===== 3. O QUE VOCÊ ENCONTRA NO GRUPO ===== -->
+<section class="secao encontra" id="grupo">
+  <div class="wrap">
+    <div class="cab"><h2>O que você encontra no grupo?</h2></div>
+    <h2 class="grande cromo">Tudo em primeira mão.</h2>
+    <div class="lista">
+      <div class="item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4.4 0 7-3 7-7 0-3-2-5.5-3.5-7.5C15 9 14 9.5 14 11c0-3-2-6-5-8 .5 3-1 4.5-2.5 6.5S4 13 4 15c0 4 3.6 7 8 7Z"/></svg></div>
+        <h3>Novas ações e lançamentos</h3>
+        <p>Cada ação nova sai primeiro no grupo, antes de qualquer outro canal.</p>
+      </div>
+      <div class="item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg></div>
+        <h3>Informações sobre os prêmios</h3>
+        <p>Fotos, detalhes e o que vem em cada kit, sem enrolação.</p>
+      </div>
+      <div class="item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4a1 1 0 0 0 1 1h3l8 4V5L7 9H4a1 1 0 0 0-1 1Z"/><path d="M7 15v4a1 1 0 0 0 1 1h2v-5"/><path d="M18 9.5a3.5 3.5 0 0 1 0 5"/></svg></div>
+        <h3>Avisos e novidades</h3>
+        <p>Datas e resultados direto no seu celular.</p>
+      </div>
+      <div class="item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M3 13h18M12 9v12"/><path d="M12 9c-2-4-6-4-6-1.5S10 9 12 9c2 0 6-.5 6-1.5S14 5 12 9Z"/></svg></div>
+        <h3>Oportunidades exclusivas</h3>
+        <p>Condições e chances que só quem está no grupo recebe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. PRÊMIOS ===== -->
+<section class="secao premios" id="premios">
+  <div class="wrap">
+    <div class="cab"><h2>Prêmios</h2></div>
+    <div class="intro">
+      <h2 class="grande"><span class="cromo">Prêmios que fazem</span> <span class="ouro">valer a pena participar</span></h2>
+      <p>Ferramentas, kits e outros prêmios selecionados para quem gosta de coisa boa.</p>
+    </div>
+    <div class="galeria">
+      <div class="card card--foto">
+        <div class="thumb"><img src="../img/ferramentas.webp" alt="Kit de ferramentas Makita com parafusadeira, chave de impacto, serra e baterias" width="1254" height="1254"></div>
+        <div class="info"><h3>Ferramentas</h3><p>Parafusadeiras, esmerilhadeiras, serras e o que faz diferença no serviço.</p></div>
+      </div>
+      <div class="card card--foto">
+        <div class="thumb"><img src="../img/churrasco.webp" alt="Kit churrasco com caixas de som JBL, celular e carnes" width="1254" height="1254"></div>
+        <div class="info"><h3>Kits churrasco</h3><p>Carnes, carvão, acessórios e cerveja para o fim de semana com a turma.</p></div>
+      </div>
+      <div class="card card--foto">
+        <div class="thumb"><img src="../img/jbl.webp" alt="Caixa de som JBL Boombox com kit churrasco" width="1254" height="1254"></div>
+        <div class="info"><h3>Outros prêmios</h3><p>Seleções especiais que anunciamos só no grupo.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONVIDE UM AMIGO ===== -->
+<section class="secao" id="convide">
+  <div class="wrap">
+    <div class="convite">
+      <div class="cab-convite">
+        <span class="pill"><span class="dot"></span>Chama a turma</span>
+        <h2><span class="cromo">Convide seu amigo</span> <span class="ouro">para o grupo</span></h2>
+        <p>Copie o link e mande para quem gosta de ferramenta, churrasco e prêmio de respeito.</p>
+      </div>
+      <div class="linha">
+        <div class="campo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19.5"/></svg><span id="link-grupo">https://chat.whatsapp.com/I9siORQjv3yGuf0AJzc8Ug</span></div>
+        <button class="btn" id="copiar-link" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span id="copiar-txt">Copiar link</span></button>
+      </div>
+      <div class="acoes">
+        <a class="btn btn--verde" href="https://wa.me/?text=Entra%20no%20grupo%20da%20Bra%C3%A7o%20Forte%20A%C3%A7%C3%B5es!%20A%C3%A7%C3%B5es%20com%20pr%C3%AAmios%20de%20respeito%3A%20ferramentas%2C%20kit%20churrasco%20e%20mais.%20https%3A%2F%2Fchat.whatsapp.com%2FI9siORQjv3yGuf0AJzc8Ug" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01"/></svg>Mandar pelo WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var b=document.getElementById('copiar-link'),t=document.getElementById('copiar-txt'),link=document.getElementById('link-grupo').textContent.trim();
+  function ok(){ b.classList.add('copiado'); t.textContent='Link copiado!'; setTimeout(function(){ b.classList.remove('copiado'); t.textContent='Copiar link'; },2200); }
+  b.addEventListener('click',function(){
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(link).then(ok,fallback); } else { fallback(); }
+    function fallback(){ var i=document.createElement('textarea'); i.value=link; document.body.appendChild(i); i.select(); try{ document.execCommand('copy'); ok(); }catch(e){ t.textContent='Copie: '+link; } document.body.removeChild(i); }
+  });
+})();
+</script>
+
+<!-- ===== 5. IDENTIDADE DA MARCA ===== -->
+<section class="secao" id="sobre">
+  <div class="wrap">
+    <div class="identidade">
+      <div class="marca-bloco">
+        <img class="logo-sobre" src="../img/logo.webp" alt="Ações Braço Forte" width="1774" height="887">
+        <h2><span class="cromo">Braço Forte é para quem</span><br><span class="ouro">não para.</span></h2>
+        <a class="btn btn--verde btn--grande" href="https://chat.whatsapp.com/I9siORQjv3yGuf0AJzc8Ug" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01"/></svg>
+          Entrar no grupo
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. RODAPÉ ===== -->
+
+<footer class="rodape">
+  <div class="wrap">
+    <div>
+      <div class="selo-seguro"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a5 5 0 0 1 5 5v3h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v3h6V7a3 3 0 0 0-3-3Z"/></svg>Grupo oficial · Site verificado e seguro</div>
+      <p class="direitos">© 2026 Braço Forte Ações. Todos os direitos reservados.</p>
+    </div>
+    <div class="redes">
+      <a href="https://www.instagram.com/acoesbracoforte/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a class="zap" href="https://chat.whatsapp.com/I9siORQjv3yGuf0AJzc8Ug" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- notificação: edite a lista MENSAGENS abaixo -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span class="t-ico"><img src="../img/logo.webp" alt="" width="1774" height="887"></span>
+  <span class="t-txt"><b id="toast-msg">Ação ativa: Kit Trabalho e Resenha</b><small id="toast-sub">Agora</small></span>
+  <button class="t-x" id="toast-x" type="button" aria-label="Fechar">×</button>
+</div>
+<script>
+(function(){
+  // Troque por informações reais. Cada item: [mensagem, legenda]
+  var MENSAGENS=[
+    ['Ozéias entrou no grupo','Grupo Braço Forte'],
+    ['Igor entrou no grupo','Grupo Braço Forte'],
+    ['Cleyton entrou no grupo','Grupo Braço Forte'],
+    ['Japão entrou no grupo','Grupo Braço Forte'],
+    ['Gilcione entrou no grupo','Grupo Braço Forte'],
+    ['Edilson entrou no grupo','Grupo Braço Forte'],
+    ['Wanderson entrou no grupo','Grupo Braço Forte'],
+    ['Dorinha entrou no grupo','Grupo Braço Forte'],
+    ['Efrem entrou no grupo','Grupo Braço Forte'],
+    ['Leão entrou no grupo','Grupo Braço Forte'],
+    ['Adriano entrou no grupo','Grupo Braço Forte'],
+    ['Valderson entrou no grupo','Grupo Braço Forte'],
+    ['Dunga entrou no grupo','Grupo Braço Forte'],
+    ['Rubevan entrou no grupo','Grupo Braço Forte'],
+    ['Luiz entrou no grupo','Grupo Braço Forte'],
+    ['Eduardo entrou no grupo','Grupo Braço Forte']
+  ];
+  var el=document.getElementById('toast'),msg=document.getElementById('toast-msg'),sub=document.getElementById('toast-sub'),x=document.getElementById('toast-x');
+  var TOTAL=MENSAGENS.length, INTERVALO=20000, DURACAO=6000, PRIMEIRA=1500;
+  var i=0,fechado=false,timer;
+  function mostra(){
+    if(fechado||i>=TOTAL) return;
+    var m=MENSAGENS[i%MENSAGENS.length]; i++;
+    msg.textContent=m[0]; sub.textContent=m[1];
+    el.classList.add('on');
+    timer=setTimeout(function(){ el.classList.remove('on'); if(i<TOTAL) timer=setTimeout(mostra,INTERVALO-DURACAO); },DURACAO);
+  }
+  x.addEventListener('click',function(){ fechado=true; clearTimeout(timer); el.classList.remove('on'); });
+  setTimeout(mostra,PRIMEIRA);
+})();
+</script>
+
+
+</body>
+</html>
