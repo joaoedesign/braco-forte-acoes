@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Entre no grupo oficial da Braço Forte Ações e participe das campanhas: ferramentas, kit churrasco e mais.">
+<meta name="description" content="Grupo no WhatsApp para quem gosta de ferramenta, churrasco e resenha. Novidades, dicas e conteúdo da Braço Forte direto no seu celular.">
 <meta property="og:title" content="Braço Forte Ações">
-<meta property="og:description" content="Campanhas para quem é da lida.">
-<meta property="og:image" content="../img/capa-kit-trabalho.webp">
+<meta property="og:description" content="Ferramenta, churrasco e resenha. Comunidade Braço Forte no WhatsApp.">
+<meta property="og:image" content="../img/ferramentas.webp">
 <link rel="icon" href="../img/logo.webp">
 <title>Braço Forte Ações</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700&display=swap">
@@ -360,49 +360,28 @@ fbq('track', 'PageView');
 <!-- ===== 1. PRIMEIRA DOBRA: card da ação ===== -->
 <section class="hero">
   <div class="wrap">
-    <!-- lotação do grupo (só no /grupo-vip2/): ajuste o número em data-pct -->
-    <div class="lotacao" id="lotacao" data-pct="93">
-      <div class="lot-topo">
-        <span class="pill"><span class="dot"></span>Lotação do grupo</span>
-        <b class="lot-num"><span id="lot-valor">0</span>%</b>
-      </div>
-      <div class="lot-barra" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="93" aria-label="Lotação do grupo"><span id="lot-fill"></span></div>
-      <p class="lot-aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18.1A2 2 0 0 0 3.5 21h17a2 2 0 0 0 1.7-2.9L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>Grupo quase lotado. Entra agora antes de fechar.</p>
-    </div>
-    <script>
-    (function(){
-      var box=document.getElementById('lotacao'),alvo=parseInt(box.getAttribute('data-pct'),10)||0,fill=document.getElementById('lot-fill'),val=document.getElementById('lot-valor');
-      var ini=null,dur=1600;
-      function passo(t){ if(!ini) ini=t; var p=Math.min((t-ini)/dur,1); p=1-Math.pow(1-p,3); var v=Math.round(alvo*p); fill.style.width=v+'%'; val.textContent=v; if(p<1) requestAnimationFrame(passo); }
-      setTimeout(function(){ requestAnimationFrame(passo); },300);
-    })();
-    </script>
     <a class="btn btn--verde btn--grande btn--cheio" href="https://chat.whatsapp.com/LBwWBttaTp8LJwZeWGeYOz" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01"/></svg>
       Entrar no grupo
     </a>
     <article class="acao acao--hero">
       <div class="foto">
-        <img src="../img/capa-kit-trabalho.webp" alt="Kit Trabalho e Resenha: ferramentas Makita e kit churrasco" width="1536" height="1024">
+        <img src="../img/ferramentas.webp" alt="Ferramentas Makita na bancada" width="1254" height="1254">
         <div class="sobre-foto">
           <h1><span class="cromo">Entre agora no grupo</span> <span class="ouro">Braço Forte</span></h1>
         </div>
       </div>
       <div class="corpo">
-        <p class="lead">Fique por dentro das nossas ações, acompanhe os lançamentos e não perca a oportunidade de participar das próximas campanhas.</p>
+        <p class="lead">Comunidade de quem gosta de ferramenta, churrasco e resenha. Novidades, dicas e conteúdo da Braço Forte direto no seu celular.</p>
         <div class="acao-info">
-          <span class="pill"><span class="dot"></span>Campanha ativa</span>
-          <h2 class="acao-nome"><span class="ouro">Kit Trabalho</span> e Resenha</h2>
+          <span class="pill"><span class="dot"></span>Grupo aberto</span>
+          <h2 class="acao-nome"><span class="ouro">Ferramenta,</span> churrasco e resenha</h2>
           <ul class="premios-lista">
-            <li><b>1º lugar</b> Kit Makita com parafusadeira, chave de impacto, maleta e baterias + kit churrasco</li>
-            <li><b>2º lugar</b> Bolsa Makita</li>
-            <li><b>Destaque</b> Parafusadeira Makita com maleta e baterias</li>
+            <li><b>Ferramentas</b> Lançamentos, comparativos e dicas de uso das marcas que a gente curte.</li>
+            <li><b>Churrasco</b> Cortes, carvão, tempero e o que faz diferença no fim de semana.</li>
+            <li><b>Resenha</b> Conversa boa, bastidores e novidades da Braço Forte em primeira mão.</li>
           </ul>
-          <a class="btn btn--grande btn--cheio" href="https://chat.whatsapp.com/LBwWBttaTp8LJwZeWGeYOz" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 6h-2.2A3 3 0 0 0 15 3.5c-1.3 0-2.4.8-3 1.9-.6-1.1-1.7-1.9-3-1.9A3 3 0 0 0 6.2 6H4a2 2 0 0 0-2 2v2h20V8a2 2 0 0 0-2-2ZM9 5.5c.8 0 1.5.7 1.5 1.5v1H9a1.2 1.2 0 0 1 0-2.5Zm6 0a1.2 1.2 0 0 1 0 2.5h-1.5V7c0-.8.7-1.5 1.5-1.5ZM3 12v7a2 2 0 0 0 2 2h6v-9H3Zm10 9h6a2 2 0 0 0 2-2v-7h-8v9Z"/></svg>
-            Participar agora
-            <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          <a class="btn btn--grande btn--cheio" href="https://chat.whatsapp.com/LBwWBttaTp8LJwZeWGeYOz" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01"/></svg>Quero entrar no grupo<svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </article>
@@ -411,8 +390,8 @@ fbq('track', 'PageView');
 
 <div class="letreiro" aria-hidden="true">
   <div class="trilho">
-    <span>Campanhas de respeito</span><span>Ações acessíveis</span><span>Kit Trabalho e Resenha</span><span>Tudo em primeira mão</span><span>Para quem é da lida</span>
-    <span>Campanhas de respeito</span><span>Ações acessíveis</span><span>Kit Trabalho e Resenha</span><span>Tudo em primeira mão</span><span>Para quem é da lida</span>
+    <span>Ferramentas</span><span>Churrasco</span><span>Resenha</span><span>Comunidade Braço Forte</span><span>Para quem é da lida</span>
+    <span>Ferramentas</span><span>Churrasco</span><span>Resenha</span><span>Comunidade Braço Forte</span><span>Para quem é da lida</span>
   </div>
 </div>
 
@@ -424,23 +403,23 @@ fbq('track', 'PageView');
     <div class="lista">
       <div class="item">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4.4 0 7-3 7-7 0-3-2-5.5-3.5-7.5C15 9 14 9.5 14 11c0-3-2-6-5-8 .5 3-1 4.5-2.5 6.5S4 13 4 15c0 4 3.6 7 8 7Z"/></svg></div>
-        <h3>Novas ações e lançamentos</h3>
-        <p>Cada ação nova sai primeiro no grupo, antes de qualquer outro canal.</p>
+        <h3>Lançamentos e novidades</h3>
+        <p>Novidade de ferramenta e de churrasco chega primeiro no grupo.</p>
       </div>
       <div class="item">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg></div>
-        <h3>Informações sobre as campanhas</h3>
-        <p>Fotos, detalhes e o que vem em cada campanha, sem enrolação.</p>
+        <h3>Dicas que funcionam</h3>
+        <p>Uso de ferramenta, ponto da carne, carvão e tempero, sem enrolação.</p>
       </div>
       <div class="item">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10v4a1 1 0 0 0 1 1h3l8 4V5L7 9H4a1 1 0 0 0-1 1Z"/><path d="M7 15v4a1 1 0 0 0 1 1h2v-5"/><path d="M18 9.5a3.5 3.5 0 0 1 0 5"/></svg></div>
-        <h3>Avisos e novidades</h3>
-        <p>Datas e resultados direto no seu celular.</p>
+        <h3>Avisos do grupo</h3>
+        <p>Recados da Braço Forte direto no seu celular.</p>
       </div>
       <div class="item">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M3 13h18M12 9v12"/><path d="M12 9c-2-4-6-4-6-1.5S10 9 12 9c2 0 6-.5 6-1.5S14 5 12 9Z"/></svg></div>
-        <h3>Oportunidades exclusivas</h3>
-        <p>Condições e chances que só quem está no grupo recebe.</p>
+        <h3>Conteúdo exclusivo</h3>
+        <p>Bastidores e conteúdo que só quem está no grupo recebe.</p>
       </div>
     </div>
   </div>
@@ -449,23 +428,23 @@ fbq('track', 'PageView');
 <!-- ===== 4. PRÊMIOS ===== -->
 <section class="secao premios" id="premios">
   <div class="wrap">
-    <div class="cab"><h2>Campanhas</h2></div>
+    <div class="cab"><h2>Comunidade</h2></div>
     <div class="intro">
-      <h2 class="grande"><span class="cromo">Campanhas que fazem</span> <span class="ouro">valer a pena participar</span></h2>
-      <p>Ferramentas, kits e outras campanhas selecionadas para quem gosta de coisa boa.</p>
+      <h2 class="grande"><span class="cromo">O que rola</span> <span class="ouro">no grupo</span></h2>
+      <p>Ferramenta, churrasco e resenha, com gente que gosta de coisa boa.</p>
     </div>
     <div class="galeria">
       <div class="card card--foto">
         <div class="thumb"><img src="../img/ferramentas.webp" alt="Kit de ferramentas Makita com parafusadeira, chave de impacto, serra e baterias" width="1254" height="1254"></div>
-        <div class="info"><h3>Ferramentas</h3><p>Parafusadeiras, esmerilhadeiras, serras e o que faz diferença no serviço.</p></div>
+        <div class="info"><h3>Ferramentas</h3><p>Parafusadeiras, esmerilhadeiras, serras e o que faz diferença no serviço. Dicas, comparativos e lançamentos.</p></div>
       </div>
       <div class="card card--foto">
         <div class="thumb"><img src="../img/churrasco.webp" alt="Kit churrasco com caixas de som JBL, celular e carnes" width="1254" height="1254"></div>
-        <div class="info"><h3>Kits churrasco</h3><p>Carnes, carvão, acessórios e cerveja para o fim de semana com a turma.</p></div>
+        <div class="info"><h3>Kits churrasco</h3><p>Cortes, carvão, acessórios e cerveja para o fim de semana com a turma.</p></div>
       </div>
       <div class="card card--foto">
         <div class="thumb"><img src="../img/jbl.webp" alt="Caixa de som JBL Boombox com kit churrasco" width="1254" height="1254"></div>
-        <div class="info"><h3>Outras campanhas</h3><p>Seleções especiais que anunciamos só no grupo.</p></div>
+        <div class="info"><h3>Resenha</h3><p>Conversa boa, bastidores e novidades da Braço Forte em primeira mão.</p></div>
       </div>
     </div>
   </div>
@@ -478,7 +457,7 @@ fbq('track', 'PageView');
       <div class="cab-convite">
         <span class="pill"><span class="dot"></span>Chama a turma</span>
         <h2><span class="cromo">Convide seu amigo</span> <span class="ouro">para o grupo</span></h2>
-        <p>Copie o link e mande para quem gosta de ferramenta, churrasco e coisa boa.</p>
+        <p>Copie o link e mande para quem gosta de ferramenta, churrasco e resenha.</p>
       </div>
       <div class="linha">
         <div class="campo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7L12.5 19.5"/></svg><span id="link-grupo">https://chat.whatsapp.com/LBwWBttaTp8LJwZeWGeYOz</span></div>
@@ -537,7 +516,7 @@ fbq('track', 'PageView');
 <!-- notificação: edite a lista MENSAGENS abaixo -->
 <div class="toast" id="toast" role="status" aria-live="polite">
   <span class="t-ico"><img src="../img/logo.webp" alt="" width="1774" height="887"></span>
-  <span class="t-txt"><b id="toast-msg">Campanha ativa: Kit Trabalho e Resenha</b><small id="toast-sub">Agora</small></span>
+  <span class="t-txt"><b id="toast-msg">Comunidade Braço Forte</b><small id="toast-sub">Agora</small></span>
   <button class="t-x" id="toast-x" type="button" aria-label="Fechar">×</button>
 </div>
 <script>
