@@ -107,6 +107,19 @@
     .perfil .nome small{max-width:46vw}
   }
 
+
+  /* ===== LOTAÇÃO (grupo-vip2) ===== */
+  .lotacao{background:linear-gradient(180deg,#1f1810,#14100b);border:1px solid rgba(255,180,0,.3);border-radius:18px;padding:16px 18px;display:grid;gap:12px;margin-bottom:14px;box-shadow:0 12px 32px rgba(0,0,0,.45)}
+  .lot-topo{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .lot-num{font-family:var(--display);font-weight:800;font-size:1.9rem;line-height:1;color:var(--amarelo);font-variant-numeric:tabular-nums}
+  .lot-barra{height:14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);overflow:hidden}
+  .lot-barra span{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--amarelo-claro),var(--amarelo) 50%,var(--laranja));box-shadow:0 0 16px rgba(255,180,0,.55);position:relative}
+  .lot-barra span::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,rgba(255,255,255,.18) 0 8px,transparent 8px 16px);animation:listras 1.2s linear infinite}
+  @keyframes listras{to{background-position:32px 0}}
+  .lot-aviso{display:flex;align-items:center;gap:8px;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;color:var(--amarelo)}
+  .lot-aviso svg{width:18px;height:18px;flex:none}
+  @media (prefers-reduced-motion:reduce){.lot-barra span::after{animation:none}}
+
   /* ===== 1. HERO: card grande da ação ===== */
   .hero{padding-block:clamp(16px,3vw,28px) clamp(14px,2.5vw,22px)}
   @keyframes entra{from{opacity:.3;transform:translateY(16px)}to{opacity:1;transform:none}}
