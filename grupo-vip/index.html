@@ -563,5 +563,20 @@ fbq('track', 'PageView');
 </script>
 
 
+<!-- Repassa fbclid e UTMs da URL para todo link que vai ao site de vendas (bracoforteacoes.com), guardando no navegador para visitas seguintes -->
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var keep=['fbclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+  var q=[];
+  keep.forEach(function(k){var v=p.get(k);if(v){q.push(k+'='+encodeURIComponent(v));try{localStorage.setItem('bf_'+k,v)}catch(e){}}else{try{v=localStorage.getItem('bf_'+k);if(v)q.push(k+'='+encodeURIComponent(v))}catch(e){}}});
+  if(!q.length)return;
+  document.querySelectorAll('a[href*="bracoforteacoes.com"]').forEach(function(a){
+    var url=new URL(a.href);
+    q.forEach(function(s){var i=s.indexOf('=');url.searchParams.set(s.slice(0,i),decodeURIComponent(s.slice(i+1)));});
+    a.href=url.toString();
+  });
+})();
+</script>
 </body>
 </html>
