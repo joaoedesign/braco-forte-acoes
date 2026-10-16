@@ -146,11 +146,20 @@
   .faq details p{color:var(--texto-2);padding:0 0 16px;font-size:.98rem}
 
   /* chamada final + vagas */
-  .final{background:linear-gradient(180deg,#1b140b,#0f0c08);border:1px solid rgba(255,180,0,.3);border-radius:var(--raio);padding:clamp(28px,5vw,48px);display:grid;gap:18px;justify-items:center;text-align:center;position:relative;overflow:hidden}
-  .final::before{content:"";position:absolute;left:50%;top:-30%;width:70%;aspect-ratio:1;border-radius:50%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(247,147,30,.22),transparent);pointer-events:none}
+  .final{background:linear-gradient(135deg,var(--amarelo-claro) 0%,var(--amarelo) 45%,var(--laranja) 100%);color:#1a1000;border:1px solid rgba(0,0,0,.2);box-shadow:0 20px 60px rgba(247,147,30,.25);border-radius:var(--raio);padding:clamp(28px,5vw,48px);display:grid;gap:18px;justify-items:center;text-align:center;position:relative;overflow:hidden}
+  .final::before{content:"";position:absolute;left:50%;top:-30%;width:70%;aspect-ratio:1;border-radius:50%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(255,255,255,.35),transparent);pointer-events:none}
   .final>*{position:relative}
+  .final .pill{background:rgba(0,0,0,.75);border-color:rgba(0,0,0,.6);color:#fff}
+  .final h2{color:#1a1000}
+  .final .btn{background:#1a1000;color:var(--amarelo);animation:none;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+  .final .btn::before{display:none}
+  .final .nota{color:#3a2a00}
+  .final .vagas .num,.final .vagas .aviso{color:#1a1000}
+  .final .vagas .num small{color:#3a2a00}
+  .final .barra{background:rgba(0,0,0,.2);border-color:rgba(0,0,0,.2)}
+  .final .barra span{background:#1a1000;box-shadow:none}
   .final h2{font-size:clamp(1.7rem,4vw,2.6rem)}
-  .final p{color:var(--texto-2);max-width:52ch}
+  .final p{color:#3a2a00;max-width:52ch;font-weight:500}
   .final .btn{min-width:min(360px,100%)}
   .vagas{width:100%;max-width:560px;display:grid;gap:10px;text-align:left}
   .vagas[data-membros="0"]{display:none}
