@@ -127,6 +127,40 @@
   .destaque .info .nota{margin-top:2px}
   @media (max-width:820px){.destaque{grid-template-columns:1fr}.destaque .foto{aspect-ratio:3/2;min-height:0}}
 
+  /* prêmios */
+  .grade-premios{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .premio{background:var(--card);border:1px solid var(--borda);border-radius:16px;overflow:hidden;display:grid;transition:transform .2s ease,border-color .2s ease}
+  .premio:hover{transform:translateY(-4px);border-color:rgba(255,180,0,.45)}
+  .premio .foto{position:relative;aspect-ratio:1;background:#000;overflow:hidden}
+  .premio .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .premio .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(23,19,14,.9))}
+  .premio .info{padding:14px 14px 16px;display:grid;gap:4px}
+  .premio .tag{justify-self:start;font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.66rem;color:#1a1000;background:var(--amarelo);border-radius:6px;padding:.3em .6em;margin-bottom:4px}
+  .premio b{font-family:var(--cond);font-weight:700;font-size:1.1rem;letter-spacing:.02em;line-height:1.2}
+  .premio small{color:var(--texto-2);font-size:.86rem;line-height:1.35}
+  .grade-eletro{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+  .eletro{display:flex;align-items:center;gap:14px;background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--borda);border-radius:16px;padding:14px 16px;transition:transform .2s ease,border-color .2s ease}
+  .eletro:hover{transform:translateY(-3px);border-color:rgba(255,180,0,.45)}
+  .eletro .ico{width:46px;height:46px;border-radius:12px;flex:none;display:grid;place-items:center;background:linear-gradient(135deg,var(--amarelo),var(--laranja));color:#1a1000}
+  .eletro .ico svg{width:24px;height:24px}
+  .eletro b{display:block;font-family:var(--cond);font-weight:700;font-size:1.1rem;letter-spacing:.02em;line-height:1.2}
+  .eletro small{display:block;color:var(--texto-2);font-size:.84rem;line-height:1.3;margin-top:2px}
+  @media (max-width:820px){.grade-eletro{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.grade-eletro{grid-template-columns:1fr}}
+  .eletro-fotos{grid-template-columns:repeat(3,1fr);margin-top:12px}
+  .eletro-fotos .premio .foto{background:radial-gradient(70% 70% at 50% 40%,#2a2218,#0e0b07)}
+  .eletro-fotos .premio .foto img{object-fit:contain;padding:10px}
+  .eletro-fotos .premio .foto img[src*="premio-tv"],.eletro-fotos .premio .foto img[src*="ferramentas"]{object-fit:cover;padding:0}
+  .creditos{font-size:.64rem;opacity:.7;max-width:70ch;line-height:1.4}
+  @media (max-width:820px){.eletro-fotos{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:420px){.eletro-fotos{grid-template-columns:1fr}}
+  .marcas{margin-top:clamp(20px,3vw,32px);background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--borda);border-radius:16px;padding:18px 20px 20px;text-align:center}
+  .marcas-titulo{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.86rem;margin-bottom:14px}
+  .marcas ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+  .marcas li{font-family:var(--display);font-weight:800;font-size:1.02rem;letter-spacing:-.01em;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:.5em 1.1em}
+  @media (max-width:820px){.grade-premios{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:420px){.grade-premios{grid-template-columns:1fr}}
+
   /* transparência */
   .confianca{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
   .conf{background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--borda);border-radius:16px;padding:18px;display:grid;gap:10px;align-content:start}
@@ -242,6 +276,7 @@ fbq('track', 'PageView');
     </a>
     <nav class="menu" aria-label="Navegação">
       <a class="link" href="#como-funciona">Como funciona</a>
+      <a class="link" href="#premios">Prêmios</a>
       <a class="btn" href="https://chat.whatsapp.com/I9siORQjv3yGuf0AJzc8Ug" target="_blank" rel="noopener">Entrar no grupo</a>
     </nav>
   </div>
@@ -303,6 +338,37 @@ fbq('track', 'PageView');
 </section>
 
 
+<!-- ===== PRÊMIOS ===== -->
+<section class="secao" id="premios">
+  <div class="wrap">
+    <div class="cab centro">
+      <span class="eyebrow">Prêmios</span>
+      <h2>Prêmios de alto valor, <span class="ouro">a pronta entrega</span></h2>
+      <p>Ferramenta, churrasco e som: cada rifa tem o prêmio definido antes de começar. Veja o que já rolou e o que está por vir.</p>
+    </div>
+    <div class="grade-premios">
+      <article class="premio"><div class="foto"><img src="../img/capa-kit-trabalho.webp" alt="Kit Trabalho e Resenha" width="1536" height="1024"></div><div class="info"><span class="tag">Combo</span><b>Kit Trabalho e Resenha</b><small>Parafusadeira + chave de impacto Makita, maleta, baterias e kit churrasco</small></div></article>
+      <article class="premio"><div class="foto"><img src="../img/ferramentas.webp" alt="Kit de ferramentas Makita" width="1254" height="1254"></div><div class="info"><span class="tag">Ferramentas</span><b>Kit Makita completo</b><small>Parafusadeira, chave de impacto, serra, maleta e baterias</small></div></article>
+      <article class="premio"><div class="foto"><img src="../img/churrasco.webp" alt="Kit churrasco com caixas de som JBL" width="1254" height="1254"></div><div class="info"><span class="tag">Churrasco + som</span><b>JBL Boombox + kit churrasco</b><small>Caixa de som JBL, carnes, carvão, pão de alho e tempero</small></div></article>
+      <article class="premio"><div class="foto"><img src="../img/jbl.webp" alt="JBL Boombox com kit churrasco" width="1254" height="1254"></div><div class="info"><span class="tag">Som</span><b>JBL Boombox</b><small>Caixa de som potente para a resenha</small></div></article>
+    </div>
+    <div class="grade-premios eletro-fotos">
+      <article class="premio"><div class="foto"><img src="../img/premio-ps5.png" alt="PlayStation 5 com controle DualSense" width="960" height="1280"></div><div class="info"><span class="tag">Games</span><b>PlayStation 5</b><small>Console + controle DualSense</small></div></article>
+      <article class="premio"><div class="foto"><img src="../img/premio-iphone.png" alt="iPhone 16 Pro Max" width="960" height="720"></div><div class="info"><span class="tag">Celular</span><b>iPhone 16 Pro Max</b><small>Lacrado, com nota fiscal</small></div></article>
+      <article class="premio"><div class="foto"><img src="../img/premio-tv.jpg" alt="Smart TV 4K" width="960" height="640"></div><div class="info"><span class="tag">TV</span><b>Smart TV 4K</b><small>Tela grande para o jogo e o churrasco</small></div></article>
+      <article class="premio"><div class="foto"><img src="../img/premio-jbl.jpg" alt="Caixa de som JBL Boombox" width="960" height="608"></div><div class="info"><span class="tag">Som</span><b>JBL Boombox</b><small>Som pesado para a resenha</small></div></article>
+      <article class="premio"><div class="foto"><img src="../img/premio-meta.jpg" alt="Óculos Ray-Ban Meta com estojo" width="960" height="720"></div><div class="info"><span class="tag">Tech</span><b>Óculos Ray-Ban Meta</b><small>Óculos inteligente com câmera</small></div></article>
+      <article class="premio"><div class="foto"><img src="../img/ferramentas.webp" alt="Ferramentas Makita" width="1254" height="1254"></div><div class="info"><span class="tag">Ferramentas</span><b>Ferramentas Makita</b><small>Parafusadeira, impacto, serra e baterias</small></div></article>
+    </div>
+    <div class="marcas">
+      <p class="marcas-titulo">As <span class="ouro">melhores marcas</span> em cada rifa</p>
+      <ul>
+        <li>Makita</li><li>Apple</li><li>Samsung</li><li>PlayStation</li><li>JBL</li><li>LG</li><li>Xiaomi</li><li>Motorola</li><li>Sony</li><li>Philips</li><li>Stella Artois</li><li>Heineken</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- ===== TRANSPARÊNCIA ===== -->
 <section class="secao" id="transparencia">
   <div class="wrap">
@@ -354,6 +420,7 @@ fbq('track', 'PageView');
     <div>
       <div class="selo-seguro"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a5 5 0 0 1 5 5v3h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v3h6V7a3 3 0 0 0-3-3Z"/></svg>Grupo oficial · Site verificado e seguro</div>
       <p class="direitos">© 2026 Braço Forte Ações. Todos os direitos reservados. · <a class="link-privacidade" href="../politica-de-privacidade/">Política de privacidade</a></p>
+      <p class="direitos creditos">Fotos de PS5 (Soberian, CC BY-SA 4.0), iPhone (Padgriffin, CC BY 4.0), TV (Kārlis Dambrāns, CC BY 2.0), JBL (Singlespeedfahrer, CC0) e Ray-Ban Meta (CCadio, CC BY 4.0) via Wikimedia Commons. Imagens ilustrativas.</p>
     </div>
     <div class="redes">
       <a href="https://www.instagram.com/acoesbracoforte/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
