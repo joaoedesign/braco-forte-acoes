@@ -1,7 +1,7 @@
 {
-  "apiUrl": "https://beta.staycloud.com",
-  "connectionId": "acaccde3-c2cc-49ff-b540-b541eae8ce02",
-  "projectId": "c93764c5-1477-4d37-9271-b60e11bfd9cb",
+  "apiUrl": "https://dash.staycloud.com",
+  "connectionId": "cf999099-992b-4d51-9ff6-fc90c22a97e4",
+  "projectId": "e406a797-7c9b-4463-9048-f21b6f395d72",
   "projectName": "Braço Forte Ações",
   "scopes": [
     "deploy:write",
@@ -9,6 +9,6 @@
     "deploy:read",
     "logs:read"
   ],
-  "connectedAt": "2026-09-22T01:43:05.985Z",
-  "selectedAt": "2026-09-22T01:43:17.404Z"
+  "connectedAt": "2026-10-17T03:37:14.075Z",
+  "selectedAt": "2026-10-17T03:38:21.572Z"
 }
